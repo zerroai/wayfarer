@@ -4,6 +4,8 @@
 
 **Status: working prototype on NEAR *testnet* (valueless funds). Unaudited. Not on mainnet. Not yet run on two real phones.** Read "What is real, what is simulated" before judging anything. Everything stated as working below was run; each claim names the command or file that shows it.
 
+**Download and website:** https://wayfarer-liard.vercel.app (Android debug APK, demo video, browser verifier). The static site source is in `website/`; the APK, demo video and sample receipt are copied in at deploy time and are not committed (`downloads/wayfarer.apk`, `assets/demo.mp4`, `assets/poster.jpg`, `assets/sample-receipt.json`, `verify/` from `verifier/`).
+
 ## The flow
 
 1. **Merchant** enters USD 5. The app locks a rate for 60 s (a hand-typed DEMO rate, no market feed) and shows a *PaymentRequest*: merchant account, fiat amount, NEAR amount (rounded **up**), quote id, expiry, nonce.

@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wayfarer — Hold NEAR. Pay anywhere.</title>
+<meta name="description" content="Tap to pay from your own NEAR vault. The shop sees a price in local currency, you approve with a fingerprint, and a post-quantum (ML-DSA-65) cheque settles on NEAR. Android testnet prototype.">
+<meta name="theme-color" content="#050608">
+<meta property="og:title" content="Wayfarer — Hold NEAR. Pay anywhere.">
+<meta property="og:description" content="Tap-to-pay from your own NEAR vault, signed with post-quantum cryptography. Android testnet prototype.">
+<meta property="og:image" content="assets/poster.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="Wayfarer home">
+    <img src="assets/logo.svg" alt="" width="34" height="34"><span>Wayfarer</span>
+  </a>
+  <nav class="links" aria-label="Main">
+    <a href="#how">How it works</a>
+    <a href="#features">Features</a>
+    <a href="#demo">Demo</a>
+    <a href="#verify">Verify</a>
+  </nav>
+  <a class="btn btn-sm" href="#download">Download</a>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="hero-copy">
+    <span class="chip reveal"><i></i> Built for NEAR HACKATHON · Testnet prototype</span>
+    <h1 class="reveal d1">Hold NEAR.<br><span class="grad">Pay anywhere.</span></h1>
+    <p class="lead reveal d2">The shop shows a price. You see it in your own currency, approve with a fingerprint, and a post-quantum signed cheque settles from your own on-chain vault. No exchange, no waiting.</p>
+    <div class="cta reveal d3">
+      <a class="btn" href="#download"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Download for Android</a>
+      <a class="btn btn-ghost" href="#demo"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M8 5l11 7-11 7z" fill="currentColor"/></svg>Watch the demo</a>
+    </div>
+    <ul class="facts reveal d4">
+      <li><b>ML-DSA-65</b><span>post-quantum signatures</span></li>
+      <li><b>20 checks</b><span>in any browser</span></li>
+      <li><b>Non-custodial</b><span>funds stay in your vault</span></li>
+    </ul>
+  </div>
+
+  <div class="stage reveal d2" id="stage" aria-hidden="true">
+    <div class="phone p-shop"><div class="screen"><img src="assets/shots/request.webp" alt="" loading="eager"></div></div>
+    <div class="phone p-buyer"><div class="screen"><img src="assets/shots/review.webp" alt="" loading="eager"></div></div>
+    <div class="float f1"><i class="ico">✓</i><div><b>Cheque accepted</b><span>Verified in seconds, offline</span></div></div>
+    <div class="float f2"><i class="ico">$</i><div><b>$3 = 0.3 NEAR</b><span>Rate locked for 60 s</span></div></div>
+    <div class="float f3"><i class="ico">🔒</i><div><b>Spending limits</b><span>Per payment and per day</span></div></div>
+  </div>
+</section>
+
+<div class="strip reveal" aria-label="Built with">
+  <span>NEAR vault contract</span><span>ML-DSA-65 (FIPS 204)</span><span>NEP-645 accounts</span><span>NEAR AI Cloud</span><span>NFC + QR</span><span>Browser-verifiable receipts</span>
+</div>
+
+<section class="sec" id="how">
+  <div class="head reveal"><span class="eyebrow">How it works</span><h2>From a price to a payment in four steps.</h2></div>
+  <div class="steps">
+    <article class="step reveal">
+      <div class="shot"><img src="assets/shots/request.webp" alt="Shop phone showing a payment request QR code" loading="lazy"></div>
+      <span class="num">01</span><h3>The shop prices the sale</h3><p>The merchant enters an amount. Wayfarer locks the rate in NEAR for 60 seconds and shows a payment request.</p>
+    </article>
+    <article class="step reveal d1">
+      <div class="shot"><img src="assets/shots/review.webp" alt="Customer phone reviewing the payment" loading="lazy"></div>
+      <span class="num">02</span><h3>You see exactly what you pay</h3><p>Your phone shows the price in your own currency and in NEAR, plus the vault it comes from and your limit.</p>
+    </article>
+    <article class="step reveal d2">
+      <div class="shot"><img src="assets/shots/signed.webp" alt="Customer phone showing the signed cheque" loading="lazy"></div>
+      <span class="num">03</span><h3>Approve with a touch</h3><p>One fingerprint signs a post-quantum cheque. It crosses to the shop by NFC tap, with QR codes as a backup.</p>
+    </article>
+    <article class="step reveal d3">
+      <div class="shot"><img src="assets/shots/accepted.webp" alt="Shop phone showing the cheque accepted" loading="lazy"></div>
+      <span class="num">04</span><h3>The shop confirms, then settles</h3><p>The shop verifies the cheque offline, hands over the goods, and the vault contract settles it on NEAR.</p>
+    </article>
+  </div>
+</section>
+
+<section class="sec" id="features">
+  <div class="head reveal"><span class="eyebrow">Features</span><h2>Built to be safe, simple and checkable.</h2></div>
+  <div class="bento">
+    <article class="card big reveal">
+      <span class="tag">Post-quantum</span>
+      <h3>Signed to last</h3>
+      <p>Every payment is an ML-DSA-65 cheque, the NIST post-quantum standard, verified on-chain by the NEAR vault contract.</p>
+      <div class="code"><span>cheque</span> 5.4 KB · 6 QR frames<br><span>verify</span> ml_dsa_verify <em>on-chain</em></div>
+    </article>
+    <article class="card reveal d1">
+      <span class="tag">Limits</span>
+      <h3>A stolen phone can’t empty your vault</h3>
+      <p>The phone’s key can only spend inside the mandate you set: a cap per payment, a daily cap, an end date. It can’t withdraw or change policy.</p>
+    </article>
+    <article class="card reveal d2">
+      <span class="tag">Order agent</span>
+      <h3>Say it. The menu prices it.</h3>
+      <p>The shopkeeper says “one coffee”. An AI on NEAR AI Cloud picks items from the shop’s own menu. The total is computed in code, never by the model, and it can’t move money.</p>
+    </article>
+    <article class="card reveal">
+      <span class="tag">Receipts</span>
+      <h3>Check any sale in a browser</h3>
+      <p>Each sale leaves a receipt that links the request, signature, mandate and on-chain events. 20 checks run right in the page.</p>
+      <a class="link" href="verify/">Open the verifier →</a>
+    </article>
+    <article class="card reveal d1">
+      <span class="tag">At the counter</span>
+      <h3>No internet needed to accept</h3>
+      <p>The shop checks the signature offline and shows “accepted, pending settlement”. Final payment happens when it settles on NEAR.</p>
+    </article>
+    <article class="card wide reveal d2">
+      <span class="tag">Cash-out</span>
+      <h3>Paid in local currency</h3>
+      <p>One button turns NEAR into USDC and pays toward a bank account. Shown here with a sandbox rail; no licensed partner is integrated yet.</p>
+    </article>
+  </div>
+</section>
+
+<section class="sec" id="demo">
+  <div class="head reveal"><span class="eyebrow">Demo</span><h2>See a sale from both phones.</h2></div>
+  <div class="video reveal">
+    <video controls preload="metadata" poster="assets/poster.jpg" playsinline>
+      <source src="assets/demo.mp4" type="video/mp4">
+    </video>
+  </div>
+  <p class="note reveal">Recorded on one Android emulator, one role at a time, shown side by side. The NFC tap is simulated.</p>
+</section>
+
+<section class="sec" id="verify">
+  <div class="verify reveal">
+    <div>
+      <span class="eyebrow">Verify</span>
+      <h2>Don’t trust us. Check the receipt.</h2>
+      <p>The verifier runs entirely in your browser. It re-checks the cheque signature, the signed mandate and the on-chain events for a real testnet payment.</p>
+      <div class="cta">
+        <a class="btn" href="verify/">Open the verifier</a>
+        <a class="btn btn-ghost" href="assets/sample-receipt.json" download>Sample receipt (JSON)</a>
+      </div>
+    </div>
+    <div class="checks" aria-hidden="true">
+      <div><i>✓</i> Request hash matches</div>
+      <div><i>✓</i> Cheque signature valid (ML-DSA-65)</div>
+      <div><i>✓</i> Mandate signed by the owner</div>
+      <div><i>✓</i> payment_authorized on-chain</div>
+      <div><i>✓</i> payment_settled on-chain</div>
+      <div class="more">+ 15 more checks</div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="download">
+  <div class="dl reveal">
+    <img class="dl-logo" src="assets/logo.svg" alt="" width="64" height="64">
+    <h2>Get the Android app</h2>
+    <p>Wayfarer 0.1.0 prototype. Runs on NEAR <b>testnet</b> with valueless funds.</p>
+    <a class="btn btn-lg" id="apk" href="downloads/wayfarer.apk" download>
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Download APK <small>29 MB · Android 11+</small>
+    </a>
+    <p class="hash">SHA-256 <code>a533702631f2e16f4b22717195c255bb13e19c832d6d680e274c6c718774e8c5</code></p>
+    <ol class="install">
+      <li>Open the file on your Android phone.</li>
+      <li>Allow installs from your browser when asked (this is a debug build, not from the Play Store).</li>
+      <li>Open Wayfarer, then choose <b>Accept payments</b> (shop) or <b>Pay</b> (customer).</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" id="status">
+  <div class="honest reveal">
+    <h3>Honest status</h3>
+    <ul>
+      <li><b>Testnet only.</b> Valueless funds. Unaudited. No mainnet run.</li>
+      <li><b>NFC is simulated.</b> It has not been tested on two real phones yet. QR is the fallback.</li>
+      <li><b>Cash-out is a sandbox.</b> No bank was paid and no swap was executed.</li>
+      <li><b>Order agent</b> needs the shopkeeper’s own NEAR AI key, entered in Setup.</li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="brand"><img src="assets/logo.svg" alt="" width="28" height="28"><span>Wayfarer</span></div>
+  <p>Hold NEAR. Pay anywhere. Built for NEAR HACKATHON.</p>
+  <a href="https://github.com/zerroai/wayfarer" rel="noopener">Source on GitHub</a>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
